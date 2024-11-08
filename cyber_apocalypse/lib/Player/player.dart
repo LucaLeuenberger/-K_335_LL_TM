@@ -212,7 +212,9 @@ class Player extends BodyComponent<CyberApocalypse>
     if (other is Lightning) {
       hit();
     }
-    if (other is Floor) jump();
+    if (other is Floor) {
+      jump();
+    }
 
     if (other is PowerUp) {
       if (other.type == PowerUpType.jetpack) {
@@ -235,23 +237,18 @@ class Player extends BodyComponent<CyberApocalypse>
     }
 
     if (other is Platform) {
-/*       if (state == HeroState.fall && other.type.isBroken) {
+      if (state == HeroState.fall && other.type.isBroken) {
         other.destroy = true;
-      } */
-      jump();
+      }
     }
+    jump();
   }
 
   @override
   void preSolve(Object other, Contact contact, Manifold oldManifold) {
-    if (other is Platform) {
-      final heroY = body.position.y - size.y / 2;
-      final platformY = other.body.position.y + Platform.size.y / 2;
-
-      if (heroY < platformY) {
+      if (state == HeroState.jump) {
         contact.isEnabled = false;
       }
-    }
   }
 
   @override

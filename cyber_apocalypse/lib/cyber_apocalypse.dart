@@ -88,7 +88,7 @@ class CyberApocalypse extends Forge2DGame
         player.hit();
       }
 
-      if (player.state == HeroState.dead && (score - worldSize.y) > heroY) {
+      if (player.state == HeroState.dead) {
         state = GameState.gameOver;
         HighScores.saveNewScore(score);
         overlays.add('GameOverMenu');
@@ -109,7 +109,7 @@ class CyberApocalypse extends Forge2DGame
         x: worldSize.x * random.nextDouble(),
         y: generatedWorldHeight,
       ));
-      if (random.nextDouble() < .8) {
+      if (random.nextDouble() < .5) {
         world.add(Platform(
           x: worldSize.x * random.nextDouble(),
           y: generatedWorldHeight - 3 + (random.nextDouble() * 6),
@@ -119,12 +119,12 @@ class CyberApocalypse extends Forge2DGame
       if (random.nextBool()) {
         world.add(HearthEnemy(
           x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 1.5,
+          y: generatedWorldHeight - 5,
         ));
-      } else if (random.nextDouble() < .2) {
+      } else if (random.nextDouble() < .6) {
         world.add(CloudEnemy(
           x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 1.5,
+          y: generatedWorldHeight - 3,
         ));
       }
       if (random.nextDouble() < .3) {
@@ -164,8 +164,8 @@ class CyberApocalypse extends Forge2DGame
   }
 
   void addCoins() {
-    final rows = random.nextInt(15) + 1;
-    final cols = random.nextInt(5) + 1;
+    final rows = random.nextInt(10) + 1;
+    final cols = random.nextInt(3) + 1;
 
     final x = (worldSize.x - (Coin.size.x * cols)) * random.nextDouble() +
         Coin.size.x / 2;

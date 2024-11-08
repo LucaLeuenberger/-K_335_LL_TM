@@ -1,30 +1,42 @@
+import 'package:cyber_apocalypse/navigation/routes.dart';
+import 'package:cyber_apocalypse/ui/gameover_screen.dart';
+import 'package:cyber_apocalypse/ui/pause_menu.dart';
+import 'package:cyber_apocalypse/assets.dart';
+import 'package:cyber_apocalypse/cyber_apocalypse.dart';
+import 'package:cyber_apocalypse/high_scores.dart';
+import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'Player/player.dart';
 
-void main() {
-  runApp(GameWidget(game: DoodleJumpGame()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Flame.device.fullScreen();
+
+  await HighScores.load();
+  await Assets.load();
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      onGenerateRoute: Routes.routes,
+    ),
+  );
 }
 
-class DoodleJumpGame extends FlameGame {
-  late Player player;
+class MyGameWidget extends StatelessWidget {
+  const MyGameWidget({super.key});
 
   @override
-  Future<void> onLoad() async {
-    player = Player();
-    add(player);
-  }
-
-  @override
-  void update(double dt) {
-    super.update(dt);
-    // Update game logic here
-  }
-
-  @override
-  void render(Canvas canvas) {
-    super.render(canvas);
-    // Render game objects here
+  Widget build(BuildContext context) {
+    return GameWidget(
+      game: CyberApocalypse(),
+      overlayBuilderMap: {
+        'GameOverMenu': (context, CyberApocalypse game) {
+          return GameOverMenu(game: game);
+        },
+        'PauseMenu': (context, CyberApocalypse game) {
+          return PauseMenu(game: game);
+        }
+      },
+    );
   }
 }

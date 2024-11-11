@@ -1,0 +1,19 @@
+atlasMap2.png
+size: 1080, 1080
+format: RGBA8888
+filter: Nearest, Nearest
+repeat: none
+SonicJump
+  rotate: false
+  xy: 317, 838
+  size: 52, 85
+  orig: 52, 85
+  offset: 0, 0
+  index: -1
+SonicFall
+  rotate: false
+  xy: 480, 830
+  size: 64, 90
+  orig: 64, 90
+  offset: 0, 0
+  index: -1

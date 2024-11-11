@@ -59,13 +59,14 @@ class Assets {
 
   static Future<void> load() async {
     final atlas = await TexturePackerAtlas.load('atlasMap.atlas');
+    final atlas2 = await TexturePackerAtlas.load('atlasMap2.atlas');
     button = atlas.findSpriteByName('button')!;
     buttonPause = atlas.findSpriteByName('buttonPause')!;
     buttonBack = atlas.findSpriteByName('buttonBack')!;
     background = atlas.findSpriteByName('background')!;
 
-    heroFall = atlas.findSpriteByName('heroFall')!;
-    heroJump = atlas.findSpriteByName('heroJump')!;
+    heroFall = atlas2.findSpriteByName('SonicFall')!;
+    heroJump = atlas2.findSpriteByName('SonicJump')!;
 
     cloudHappyEnemy = atlas.findSpriteByName('HappyCloud')!;
     cloudAngryEnemy = atlas.findSpriteByName('AngryCloud')!;

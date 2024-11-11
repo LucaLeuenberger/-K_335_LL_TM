@@ -64,14 +64,14 @@ class Player extends BodyComponent<CyberApocalypse>
     }
 
     fallComponent = SpriteComponent(
-      sprite: await gameRef.loadSprite('../ui/Sonic.png'),
-      size: Vector2(.80, .9),
+      sprite: Assets.heroFall,
+      size: size,
       anchor: Anchor.center,
     );
 
     jumpComponent = SpriteComponent(
-      sprite: await gameRef.loadSprite('../ui/Sonic.png'),
-      size: Vector2(.80, .9),
+      sprite: Assets.heroJump,
+      size: size,
       anchor: Anchor.center,
     );
 

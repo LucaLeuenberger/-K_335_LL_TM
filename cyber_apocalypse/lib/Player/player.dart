@@ -13,7 +13,7 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:cyber_apocalypse/components/platform.dart';
+import 'package:cyber_apocalypse/Components/platform.dart';
 import '/utils.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
@@ -169,13 +169,11 @@ class Player extends BodyComponent<CyberApocalypse>
     } else if (state == HeroState.dead) {
       _setComponent(fallComponent);
     }
-    if (state == HeroState.dead){
+    if (state == HeroState.dead) {
       body.setFixedRotation(true);
     } else {
       body.angularVelocity = 0;
     }
-
-
   }
 
   void _setComponent(PositionComponent component) {
@@ -245,18 +243,32 @@ class Player extends BodyComponent<CyberApocalypse>
     }
 
     if (other is Platform) {
-      if (state == HeroState.fall && other.type.isBroken) {
+      jump();
+    }
+  }
+
+  @override
+  void endContact(Object other, Contact contact) {
+    if (other is Platform) {
+      if (other.type.isBroken) {
+        state = HeroState.fall;
+        jump();
         other.destroy = true;
+        world.remove(other);
       }
     }
-    jump();
   }
 
   @override
   void preSolve(Object other, Contact contact, Manifold oldManifold) {
-      if (state == HeroState.jump) {
+    if (other is Platform) {
+      final heroY = body.position.y - size.y / 2;
+      final platformY = other.body.position.y + Platform.size.y / 2;
+
+      if (heroY < platformY) {
         contact.isEnabled = false;
       }
+    }
   }
 
   @override

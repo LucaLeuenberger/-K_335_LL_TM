@@ -10,6 +10,7 @@ import 'package:cyber_apocalypse/components/power_up.dart';
 import 'package:cyber_apocalypse/cyber_apocalypse.dart';
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:cyber_apocalypse/components/platform.dart';
@@ -25,7 +26,7 @@ enum HeroState {
 const _durationJetpack = 3.0;
 
 class Player extends BodyComponent<CyberApocalypse>
-    with ContactCallbacks, KeyboardHandler {
+    with ContactCallbacks, KeyboardHandler, HasGameRef<CyberApocalypse> {
   static final size = Vector2(.75, .80);
 
   var state = HeroState.fall;
@@ -63,14 +64,14 @@ class Player extends BodyComponent<CyberApocalypse>
     }
 
     fallComponent = SpriteComponent(
-      sprite: Assets.heroFall,
-      size: size,
+      sprite: await gameRef.loadSprite('../ui/Sonic.png'),
+      size: Vector2(.80, .9),
       anchor: Anchor.center,
     );
 
     jumpComponent = SpriteComponent(
-      sprite: Assets.heroJump,
-      size: size,
+      sprite: await gameRef.loadSprite('../ui/Sonic.png'),
+      size: Vector2(.80, .9),
       anchor: Anchor.center,
     );
 
@@ -168,6 +169,13 @@ class Player extends BodyComponent<CyberApocalypse>
     } else if (state == HeroState.dead) {
       _setComponent(fallComponent);
     }
+    if (state == HeroState.dead){
+      body.setFixedRotation(true);
+    } else {
+      body.angularVelocity = 0;
+    }
+
+
   }
 
   void _setComponent(PositionComponent component) {

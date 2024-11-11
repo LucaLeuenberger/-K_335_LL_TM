@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:cyber_apocalypse/ui/widgets/my_text.dart';
 import 'package:cyber_apocalypse/assets.dart';
 import 'package:cyber_apocalypse/high_scores.dart';
@@ -18,7 +20,7 @@ class LeaderboardScreen extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/ui/background.png'),
+                image: AssetImage('assets/ui/background3.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -39,31 +41,42 @@ class LeaderboardScreen extends StatelessWidget {
                 const MyText(
                   'Best Scores',
                   fontSize: 42,
+                  
                 ),
                 SizedBox(height: spacing),
-                MyText(
-                  '${HighScores.highScores[0]}',
-                  fontSize: 30,
-                ),
-                SizedBox(height: spacing),
-                MyText(
-                  '${HighScores.highScores[1]}',
-                  fontSize: 30,
-                ),
-                SizedBox(height: spacing),
-                MyText(
-                  '${HighScores.highScores[2]}',
-                  fontSize: 30,
-                ),
-                SizedBox(height: spacing),
-                MyText(
-                  '${HighScores.highScores[3]}',
-                  fontSize: 30,
-                ),
-                SizedBox(height: spacing),
-                MyText(
-                  '${HighScores.highScores[4]}',
-                  fontSize: 30,
+                Container(
+                  color: Colors.blue.withOpacity(.8),
+                  height: MediaQuery.of(context).size.height * .6,
+                  width: MediaQuery.of(context).size.width * .8,
+                  margin: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(16),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    verticalDirection: VerticalDirection.down,
+                    children: [
+                      MyText(
+                        '${HighScores.highScores[0]}',
+                        fontSize: 30,
+                      ),
+                      MyText(
+                        '${HighScores.highScores[1]}',
+                        fontSize: 30,
+                      ),
+                      MyText(
+                        '${HighScores.highScores[2]}',
+                        fontSize: 30,
+                      ),
+                      MyText(
+                        '${HighScores.highScores[3]}',
+                        fontSize: 30,
+                      ),
+                      MyText(
+                        '${HighScores.highScores[4]}',
+                        fontSize: 30,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),

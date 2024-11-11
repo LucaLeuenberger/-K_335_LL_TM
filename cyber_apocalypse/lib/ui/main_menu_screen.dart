@@ -19,7 +19,7 @@ class MainMenuScreen extends StatelessWidget {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/ui/background.png'),
+                image: AssetImage('assets/ui/background1.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -28,44 +28,6 @@ class MainMenuScreen extends StatelessWidget {
               child: LayoutBuilder(builder: (context, constrains) {
                 return Stack(
                   children: [
-                    Positioned(
-                      bottom: constrains.maxHeight * .25,
-                      child: Image.asset(
-                        'assets/ui/heroJump.png',
-                        scale: 1.25,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: constrains.maxHeight * .60,
-                      child: Image.asset(
-                        'assets/ui/LandPiece_DarkMulticolored.png',
-                        scale: 1.25,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: constrains.maxHeight * .05,
-                      left: constrains.maxWidth * .2,
-                      child: Image.asset(
-                        'assets/ui/BrokenLandPiece_Beige.png',
-                        scale: 1.25,
-                      ),
-                    ),
-                    Positioned(
-                      bottom: constrains.maxHeight * .3,
-                      right: 0,
-                      child: Image.asset(
-                        'assets/ui/LandPiece_DarkBlue.png',
-                        scale: 1.5,
-                      ),
-                    ),
-                    Positioned(
-                      top: constrains.maxHeight * .3,
-                      right: 0,
-                      child: Image.asset(
-                        'assets/ui/HappyCloud.png',
-                        scale: 1.75,
-                      ),
-                    ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -80,18 +42,18 @@ class MainMenuScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               MyButton(
-                                'Play',
+                                'Spielen',
                                 onPressed: () =>
                                     context.pushAndRemoveUntil(Routes.game),
                               ),
                               const SizedBox(height: 40),
                               MyButton(
-                                'Rate',
+                                'Neues Spiel',
                                 onPressed: () {},
                               ),
                               const SizedBox(height: 40),
                               MyButton(
-                                'Leaderboard',
+                                'Spielstand',
                                 onPressed: () =>
                                     context.push(Routes.leaderboard),
                               ),

@@ -119,12 +119,12 @@ class CyberApocalypse extends Forge2DGame
       if (random.nextBool()) {
         world.add(HearthEnemy(
           x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 5,
+          y: generatedWorldHeight - 8,
         ));
-      } else if (random.nextDouble() < .6) {
+      } else if (random.nextDouble() < .35) {
         world.add(CloudEnemy(
           x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 3,
+          y: generatedWorldHeight - 5,
         ));
       }
       if (random.nextDouble() < .3) {
@@ -164,7 +164,7 @@ class CyberApocalypse extends Forge2DGame
   }
 
   void addCoins() {
-    final rows = random.nextInt(10) + 1;
+    final rows = random.nextInt(8) + 1;
     final cols = random.nextInt(3) + 1;
 
     final x = (worldSize.x - (Coin.size.x * cols)) * random.nextDouble() +
@@ -193,9 +193,7 @@ class CyberApocalypse extends Forge2DGame
     final x = player.body.position.x;
     final y = player.body.position.y;
 
-    world.add(Bullet(x: x, y: y, accelX: -1.5));
     world.add(Bullet(x: x, y: y, accelX: 0));
-    world.add(Bullet(x: x, y: y, accelX: 1.5));
   }
 
   @override

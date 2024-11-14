@@ -70,24 +70,24 @@ class Assets {
 
     cloudHappyEnemy = atlas.findSpriteByName('HappyCloud')!;
     cloudAngryEnemy = atlas.findSpriteByName('AngryCloud')!;
-    final enemy1 = atlas.findSpriteByName('HearthEnemy1')!;
-    final enemy2 = atlas.findSpriteByName('HearthEnemy2')!;
+    final enemy1 = atlas2.findSpriteByName('EggbotRight')!;
+    final enemy2 = atlas2.findSpriteByName('EggbotLeft')!;
     final lightning1 = atlas.findSpriteByName('Lightning1')!;
     final lightning2 = atlas.findSpriteByName('Lightning2')!;
 
     hearthEnemy = SpriteAnimation.spriteList([
       enemy1,
       enemy2,
-    ], stepTime: 0.2, loop: true);
+    ], stepTime: 1, loop: true);
 
     lightning = SpriteAnimation.spriteList([
       lightning1,
       lightning2,
     ], stepTime: 0.15, loop: true);
 
-    coin = atlas.findSpriteByName('Coin')!;
+    coin = atlas2.findSpriteByName('Rings')!;
     gun = atlas.findSpriteByName('Pistol')!;
-    bullet = atlas.findSpriteByName('Bullet')!;
+    bullet = atlas2.findSpriteByName('ChaosSpear')!;
     spring = atlas.findSpriteByName('Spring')!;
     bubbleSmall = atlas.findSpriteByName('Bubble_Small')!;
     jetpackSmall = atlas.findSpriteByName('Jetpack_Small')!;
@@ -114,13 +114,13 @@ class Assets {
     platformBlueLeft = atlas.findSpriteByName('HalfLandPiece_Left_Blue')!;
     platformBlueRight = atlas.findSpriteByName('HalfLandPiece_Right_Blue')!;
 
-    platformGray = atlas.findSpriteByName('LandPiece_DarkGray')!;
+    platformGray = atlas2.findSpriteByName('PlatformTrapGreen')!;
     platformGrayLight = atlas.findSpriteByName('LandPiece_LightGray')!;
     platformGrayBroken = atlas.findSpriteByName('BrokenLandPiece_Gray')!;
     platformGrayLeft = atlas.findSpriteByName('HalfLandPiece_Left_Gray')!;
     platformGrayRight = atlas.findSpriteByName('HalfLandPiece_Right_Gray')!;
 
-    platformGreen = atlas.findSpriteByName('LandPiece_DarkGreen')!;
+    platformGreen = atlas2.findSpriteByName('PlatformNormalGreen')!;
     platformGreenLight = atlas.findSpriteByName('LandPiece_LightGreen')!;
     platformGreenBroken = atlas.findSpriteByName('BrokenLandPiece_Green')!;
     platformGreenLeft = atlas.findSpriteByName('HalfLandPiece_Left_Green')!;
@@ -136,7 +136,7 @@ class Assets {
     platformMulticolorRight =
         atlas.findSpriteByName('HalfLandPiece_Right_Multicolored')!;
 
-    platformPink = atlas.findSpriteByName('LandPiece_DarkPink')!;
+    platformPink = atlas2.findSpriteByName('PlatformSpringGreen')!;
     platformPinkLight = atlas.findSpriteByName('LandPiece_LightPink')!;
     platformPinkBroken = atlas.findSpriteByName('BrokenLandPiece_Pink')!;
     platformPinkLeft = atlas.findSpriteByName('HalfLandPiece_Left_Pink')!;

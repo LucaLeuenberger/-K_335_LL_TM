@@ -17,3 +17,52 @@ SonicFall
   orig: 64, 90
   offset: 0, 0
   index: -1
+PlatformNormalGreen
+  rotate: false
+  xy: 44, 1000
+  size: 215, 39
+  orig: 215, 39
+  offset: 0, 0
+  index: -1
+EggbotRight
+  rotate: false
+  xy: 44, 828
+  size: 123, 93
+  orig: 123, 93
+  offset: 0, 0
+  index: -1
+EggbotLeft
+  rotate: false
+  xy: 168, 828
+  size: 123, 93
+  orig: 123, 93
+  offset: 0, 0
+  index: -1
+PlatformTrapGreen
+  rotate: false
+  xy: 288, 935
+  size: 196, 110
+  orig: 196, 110
+  offset: 0, 0
+  index: -1
+PlatformSpringGreen
+  rotate: false
+  xy: 511, 951
+  size: 209, 89
+  orig: 209, 89
+  offset: 0, 0
+  index: -1
+Rings
+  rotate: false
+  xy: 887, 785
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+ChaosSpear
+  rotate: true
+  xy: 947, 784
+  size: 36, 24
+  orig: 36, 24
+  offset: 0, 0
+  index: -1

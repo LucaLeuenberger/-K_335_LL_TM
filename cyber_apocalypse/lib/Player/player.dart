@@ -64,13 +64,13 @@ class Player extends BodyComponent<CyberApocalypse>
     }
 
     fallComponent = SpriteComponent(
-      sprite: Assets.heroFall,
+      sprite: Assets.sonicFall,
       size: size,
       anchor: Anchor.center,
     );
 
     jumpComponent = SpriteComponent(
-      sprite: Assets.heroJump,
+      sprite: Assets.sonicJump,
       size: size,
       anchor: Anchor.center,
     );

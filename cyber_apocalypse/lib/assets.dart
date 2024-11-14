@@ -8,8 +8,11 @@ class Assets {
 
   static late final Sprite background;
 
-  static late final Sprite heroFall;
-  static late final Sprite heroJump;
+  static late final Sprite sonicFall;
+  static late final Sprite sonicJump;
+
+  static late final Sprite shadowFall;
+  static late final Sprite shadowJump;
 
   static late final Sprite cloudHappyEnemy;
   static late final Sprite cloudAngryEnemy;
@@ -65,8 +68,11 @@ class Assets {
     buttonBack = atlas.findSpriteByName('buttonBack')!;
     background = atlas.findSpriteByName('background')!;
 
-    heroFall = atlas2.findSpriteByName('SonicFall')!;
-    heroJump = atlas2.findSpriteByName('SonicJump')!;
+    sonicFall = atlas2.findSpriteByName('SonicFall')!;
+    sonicJump = atlas2.findSpriteByName('SonicJump')!;
+
+    shadowFall = atlas2.findSpriteByName('ShadowFall')!;
+    shadowJump = atlas2.findSpriteByName('ShadowJump')!;
 
     cloudHappyEnemy = atlas.findSpriteByName('HappyCloud')!;
     cloudAngryEnemy = atlas.findSpriteByName('AngryCloud')!;

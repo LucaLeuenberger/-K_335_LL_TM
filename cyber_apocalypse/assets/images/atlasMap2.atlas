@@ -17,6 +17,20 @@ SonicFall
   orig: 64, 90
   offset: 0, 0
   index: -1
+ShadowJump
+  rotate: false
+  xy: 854, 838
+  size: 52, 85
+  orig: 52, 85
+  offset: 0, 0
+  index: -1
+ShadowFall
+  rotate: false
+  xy: 680, 830
+  size: 64, 90
+  orig: 64, 90
+  offset: 0, 0
+  index: -1
 PlatformNormalGreen
   rotate: false
   xy: 44, 1000

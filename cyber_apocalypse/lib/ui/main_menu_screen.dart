@@ -49,7 +49,8 @@ class MainMenuScreen extends StatelessWidget {
                               const SizedBox(height: 40),
                               MyButton(
                                 'Neues Spiel',
-                                onPressed: () {},
+                                onPressed: () =>
+                                    context.push(Routes.newgame),
                               ),
                               const SizedBox(height: 40),
                               MyButton(

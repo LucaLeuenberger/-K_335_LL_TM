@@ -1,14 +1,18 @@
 import 'dart:core';
 
+import 'package:cyber_apocalypse/provider/character_provider.dart';
 import 'package:cyber_apocalypse/ui/leaderboard_screen.dart';
 import 'package:cyber_apocalypse/ui/main_menu_screen.dart';
+import 'package:cyber_apocalypse/ui/neu_game_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cyber_apocalypse/main.dart';
+import 'package:provider/provider.dart';
 
 enum Routes {
   main('/'),
   game('/game'),
-  leaderboard('/leaderboard');
+  leaderboard('/leaderboard'),
+  newgame('/newgame');
 
   final String route;
 
@@ -19,6 +23,7 @@ enum Routes {
       return MaterialPageRoute(builder: (_) => widget, settings: settings);
     }
 
+
     final routeName = Routes.values.firstWhere((e) => e.route == settings.name);
 
     switch (routeName) {
@@ -28,6 +33,8 @@ enum Routes {
         return buildRoute(const MyGameWidget());
       case Routes.leaderboard:
         return buildRoute(const LeaderboardScreen());
+      case Routes.newgame:
+        return buildRoute(const NeuGameScreen());
       default:
         throw Exception('Route does not exists');
     }

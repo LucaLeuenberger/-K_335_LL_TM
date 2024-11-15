@@ -88,42 +88,42 @@ ChaosEmeralds
   offset: 0, 0
   index: -1
 SandPlatformNormal
-  rotate: true
+  rotate: false
   xy: 542, 666
   size: 174, 32
   orig: 174, 32
   offset: 0, 0
   index: -1  
 SandPlatformBreaking
-  rotate: true
+  rotate: false
   xy: 737, 664
   size: 174, 32
   orig: 174, 32
   offset: 0, 0
   index: -1
 SandPlatformBroken
-  rotate: true
+  rotate: false
   xy: 736, 502
   size: 195, 45
   orig: 195, 45
   offset: 0, 0
   index: -1
 StreetplatformNormal
-  rotate: true
+  rotate: false
   xy: 540, 615
   size: 176, 35
   orig: 176, 35
   offset: 0, 0
   index: -1
 StreetplatformBreaking
-  rotate: true
+  rotate: false
   xy: 732, 613
   size: 176, 34
   orig: 176, 34
   offset: 0, 0
   index: -1
 StreetplatformBroken
-  rotate: true
+  rotate: false
   xy: 736, 561
   size: 192, 45
   orig: 192, 45

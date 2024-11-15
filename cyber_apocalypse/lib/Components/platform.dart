@@ -11,17 +11,10 @@ enum PlatformType {
   beigeLight,
   beigeBroken, 
   gray,
-  grayLight, 
-  grayBroken,
   green,
   greenLight,
-  greenBroken, 
-   multicolor,
-  multicolorLight,
-  multicolorBroken, 
+  greenBroken,
   pink,
-  pinkLight,
-  pinkBroken, 
 }
 
 extension PlatformTypeExtension on PlatformType {
@@ -40,29 +33,15 @@ extension PlatformTypeExtension on PlatformType {
       case PlatformType.blueBroken:
         return Assets.platformBlueBroken; 
       case PlatformType.gray:
-        return Assets.platformGray;
-       case PlatformType.grayLight:
-        return Assets.platformGrayLight; 
-      case PlatformType.grayBroken:
-        return Assets.platformGrayBroken; 
+        return Assets.platformGray; 
       case PlatformType.green:
         return Assets.platformGreen;
-       case PlatformType.greenLight:
-        return Assets.platformGreenLight; 
+      case PlatformType.greenLight:
+        return Assets.platformGreenLight;
       case PlatformType.greenBroken:
-        return Assets.platformGreenBroken; 
-      case PlatformType.multicolor:
-        return Assets.platformMulticolor;
-      case PlatformType.multicolorLight:
-        return Assets.platformMulticolorLight;
-      case PlatformType.multicolorBroken:
-        return Assets.platformMulticolorBroken; 
+        return Assets.platformGreenBroken;
       case PlatformType.pink:
         return Assets.platformPink;
-     case PlatformType.pinkLight:
-        return Assets.platformPinkLight;
-      case PlatformType.pinkBroken:
-        return Assets.platformPinkBroken; 
     }
   }
 
@@ -70,10 +49,7 @@ extension PlatformTypeExtension on PlatformType {
     switch (this) {
       case PlatformType.blueBroken:
       case PlatformType.beigeBroken: 
-      case PlatformType.grayBroken:
       case PlatformType.greenBroken:
-      case PlatformType.multicolorBroken:
-      case PlatformType.pinkBroken: 
         return true;
       default:
         return false;

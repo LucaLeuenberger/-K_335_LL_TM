@@ -26,47 +26,14 @@ class PlatformPieces extends BodyComponent<CyberApocalypse> {
 
     switch (type) {
        case PlatformType.beigeBroken:
-        if (isLeftSide) {
-          sprite = Assets.platformBeigeLeft;
-        } else {
-          sprite = Assets.platformBeigeRight;
-        }
+          sprite = Assets.platformBeigeLight;
         break;
       case PlatformType.blueBroken:
-        if (isLeftSide) {
-          sprite = Assets.platformBlueLeft;
-        } else {
-          sprite = Assets.platformBlueRight;
-        }
-        break; 
-      case PlatformType.grayBroken:
-        if (isLeftSide) {
-          sprite = Assets.platformGrayLeft;
-        } else {
-          sprite = Assets.platformGrayRight;
-        }
+        sprite = Assets.platformBlueLight;
         break;
       case PlatformType.greenBroken:
-        if (isLeftSide) {
-          sprite = Assets.platformGreenLeft;
-        } else {
-          sprite = Assets.platformGreenRight;
-        }
+        sprite = Assets.platformGreenLight;
         break;
-       case PlatformType.multicolorBroken:
-        if (isLeftSide) {
-          sprite = Assets.platformMulticolorLeft;
-        } else {
-          sprite = Assets.platformMulticolorRight;
-        }
-        break;
-      case PlatformType.pinkBroken:
-        if (isLeftSide) {
-          sprite = Assets.platformPinkLeft;
-        } else {
-          sprite = Assets.platformPinkRight;
-        }
-        break; 
       default:
         throw ('Wrong platform type exception');
     }

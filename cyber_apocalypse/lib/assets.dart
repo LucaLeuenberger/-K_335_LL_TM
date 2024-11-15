@@ -29,41 +29,21 @@ class Assets {
   static late final Sprite bubble;
   static late final Sprite jetpack;
 
-   static late final Sprite platformBeige;
+  static late final Sprite platformBeige;
   static late final Sprite platformBeigeLight;
   static late final Sprite platformBeigeBroken;
-  static late final Sprite platformBeigeLeft;
-  static late final Sprite platformBeigeRight;
   
   static late final Sprite platformBlue;
   static late final Sprite platformBlueLight;
   static late final Sprite platformBlueBroken;
-  static late final Sprite platformBlueLeft;
-  static late final Sprite platformBlueRight; 
 
   static late final Sprite platformGray;
-   static late final Sprite platformGrayLight; 
-  static late final Sprite platformGrayBroken;
-  static late final Sprite platformGrayLeft;
-  static late final Sprite platformGrayRight;
 
   static late final Sprite platformGreen;
-   static late final Sprite platformGreenLight; 
+  static late final Sprite platformGreenLight;
   static late final Sprite platformGreenBroken;
-  static late final Sprite platformGreenLeft;
-  static late final Sprite platformGreenRight;
-
-   static late final Sprite platformMulticolor;
-  static late final Sprite platformMulticolorLight;
-  static late final Sprite platformMulticolorBroken;
-  static late final Sprite platformMulticolorLeft;
-  static late final Sprite platformMulticolorRight; 
 
   static late final Sprite platformPink;
-  static late final Sprite platformPinkLight; 
-  static late final Sprite platformPinkBroken;
-  static late final Sprite platformPinkLeft;
-  static late final Sprite platformPinkRight;
 
   static Future<void> load() async {
     final atlas = await TexturePackerAtlas.load('atlasMap.atlas');
@@ -116,41 +96,18 @@ class Assets {
     platformBeige = atlas2.findSpriteByName('StreetplatformNormal')!;
     platformBeigeLight = atlas2.findSpriteByName('StreetplatformBreaking')!;
     platformBeigeBroken = atlas2.findSpriteByName('StreetplatformBroken')!;
-    platformBeigeLeft = atlas.findSpriteByName('HalfLandPiece_Left_Beige')!;
-    platformBeigeRight = atlas.findSpriteByName('HalfLandPiece_Right_Beige')!;
 
     platformBlue = atlas2.findSpriteByName('SandPlatformNormal')!;
     platformBlueLight = atlas2.findSpriteByName('SandPlatformBreaking')!;
     platformBlueBroken = atlas2.findSpriteByName('SandPlatformBroken')!;
-    platformBlueLeft = atlas.findSpriteByName('HalfLandPiece_Left_Blue')!;
-    platformBlueRight = atlas.findSpriteByName('HalfLandPiece_Right_Blue')!; 
 
     platformGray = atlas2.findSpriteByName('PlatformTrapGreen')!;
-    platformGrayLight = atlas.findSpriteByName('LandPiece_LightGray')!;
-    platformGrayBroken = atlas.findSpriteByName('BrokenLandPiece_Gray')!;
-    platformGrayLeft = atlas.findSpriteByName('HalfLandPiece_Left_Gray')!;
-    platformGrayRight = atlas.findSpriteByName('HalfLandPiece_Right_Gray')!; 
 
     platformGreen = atlas2.findSpriteByName('PlatformNormalGreen')!;
-   platformGreenLight = atlas.findSpriteByName('LandPiece_LightGreen')!; 
-     platformGreenBroken = atlas.findSpriteByName('BrokenLandPiece_Green')!;
-     platformGreenLeft = atlas.findSpriteByName('HalfLandPiece_Left_Green')!;
-    platformGreenRight = atlas.findSpriteByName('HalfLandPiece_Right_Green')!; 
+    platformGreenLight = atlas2.findSpriteByName('GreenplatformBreaking')!; 
+    platformGreenBroken = atlas2.findSpriteByName('GreenplatformBroken')!;
 
-     platformMulticolor = atlas.findSpriteByName('LandPiece_DarkMulticolored')!;
-    platformMulticolorLight =
-        atlas.findSpriteByName('LandPiece_LightMulticolored')!;
-    platformMulticolorBroken =
-        atlas.findSpriteByName('BrokenLandPiece_Multicolored')!;
-    platformMulticolorLeft =
-        atlas.findSpriteByName('HalfLandPiece_Left_Multicolored')!;
-    platformMulticolorRight =
-        atlas.findSpriteByName('HalfLandPiece_Right_Multicolored')!;
 
     platformPink = atlas2.findSpriteByName('PlatformSpringGreen')!;
-     platformPinkLight = atlas.findSpriteByName('LandPiece_LightPink')!;
-    platformPinkBroken = atlas.findSpriteByName('BrokenLandPiece_Pink')!;
-    platformPinkLeft = atlas.findSpriteByName('HalfLandPiece_Left_Pink')!;
-    platformPinkRight = atlas.findSpriteByName('HalfLandPiece_Right_Pink')!; 
   }
 }

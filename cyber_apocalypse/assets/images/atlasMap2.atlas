@@ -128,5 +128,19 @@ StreetplatformBroken
   size: 192, 45
   orig: 192, 45
   offset: 0, 0
+  index: -1
+GreenplatformBreaking
+  rotate: false
+  xy: 732, 1003
+  size: 224, 41
+  orig: 224, 41
+  offset: 0, 0
+  index: -1
+GreenplatformBroken
+  rotate: false
+  xy: 744, 936
+  size: 192, 45
+  orig: 192, 45
+  offset: 0, 0
   index: -1           
 

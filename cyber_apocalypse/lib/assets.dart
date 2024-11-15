@@ -113,15 +113,15 @@ class Assets {
       jetpack2,
     ], stepTime: 0.15, loop: true);
 
-    platformBeige = atlas.findSpriteByName('LandPiece_DarkBeige')!;
-    platformBeigeLight = atlas.findSpriteByName('LandPiece_LightBeige')!;
-    platformBeigeBroken = atlas.findSpriteByName('BrokenLandPiece_Beige')!;
+    platformBeige = atlas2.findSpriteByName('StreetplatformNormal')!;
+    platformBeigeLight = atlas2.findSpriteByName('StreetplatformBreaking')!;
+    platformBeigeBroken = atlas2.findSpriteByName('StreetplatformBroken')!;
     platformBeigeLeft = atlas.findSpriteByName('HalfLandPiece_Left_Beige')!;
     platformBeigeRight = atlas.findSpriteByName('HalfLandPiece_Right_Beige')!;
 
-    platformBlue = atlas.findSpriteByName('LandPiece_DarkBlue')!;
-    platformBlueLight = atlas.findSpriteByName('LandPiece_LightBlue')!;
-    platformBlueBroken = atlas.findSpriteByName('BrokenLandPiece_Blue')!;
+    platformBlue = atlas2.findSpriteByName('SandPlatformNormal')!;
+    platformBlueLight = atlas2.findSpriteByName('SandPlatformBreaking')!;
+    platformBlueBroken = atlas2.findSpriteByName('SandPlatformBroken')!;
     platformBlueLeft = atlas.findSpriteByName('HalfLandPiece_Left_Blue')!;
     platformBlueRight = atlas.findSpriteByName('HalfLandPiece_Right_Blue')!; 
 

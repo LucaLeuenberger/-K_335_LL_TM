@@ -5,30 +5,30 @@ filter: Nearest, Nearest
 repeat: none
 SonicJump
   rotate: false
-  xy: 317, 838
-  size: 52, 85
-  orig: 52, 85
+  xy: 691, 722
+  size: 55, 101
+  orig: 55, 101
   offset: 0, 0
   index: -1
 SonicFall
   rotate: false
-  xy: 480, 830
-  size: 64, 90
-  orig: 64, 90
+  xy: 466, 730
+  size: 90, 91
+  orig: 90, 91
   offset: 0, 0
   index: -1
 ShadowJump
   rotate: false
-  xy: 854, 838
-  size: 52, 85
-  orig: 52, 85
+  xy: 186, 728
+  size: 75, 98
+  orig: 75, 98
   offset: 0, 0
   index: -1
 ShadowFall
   rotate: false
-  xy: 680, 830
-  size: 64, 90
-  orig: 64, 90
+  xy: 280, 717
+  size: 81, 112
+  orig: 81, 112
   offset: 0, 0
   index: -1
 PlatformNormalGreen
@@ -87,3 +87,46 @@ ChaosEmeralds
   orig: 70, 64
   offset: 0, 0
   index: -1
+SandPlatformNormal
+  rotate: true
+  xy: 542, 666
+  size: 174, 32
+  orig: 174, 32
+  offset: 0, 0
+  index: -1  
+SandPlatformBreaking
+  rotate: true
+  xy: 737, 664
+  size: 174, 32
+  orig: 174, 32
+  offset: 0, 0
+  index: -1
+SandPlatformBroken
+  rotate: true
+  xy: 736, 502
+  size: 195, 45
+  orig: 195, 45
+  offset: 0, 0
+  index: -1
+StreetplatformNormal
+  rotate: true
+  xy: 540, 615
+  size: 176, 35
+  orig: 176, 35
+  offset: 0, 0
+  index: -1
+StreetplatformBreaking
+  rotate: true
+  xy: 732, 613
+  size: 176, 34
+  orig: 176, 34
+  offset: 0, 0
+  index: -1
+StreetplatformBroken
+  rotate: true
+  xy: 736, 561
+  size: 192, 45
+  orig: 192, 45
+  offset: 0, 0
+  index: -1           
+

@@ -28,8 +28,9 @@ class GameOverMenu extends StatelessWidget {
                 SizedBox(height: height * .15),
                 const MyText(
                   'Game Over!',
-                  fontSize: 56,
+                  fontSize: 40,
                 ),
+                SizedBox(height: height * .15),
                 Table(
                   // border: TableBorder.all(),
                   columnWidths: const {
@@ -50,7 +51,7 @@ class GameOverMenu extends StatelessWidget {
                     TableRow(
                       children: [
                         const SizedBox(),
-                        const MyText('Best Score'),
+                        const MyText('Best'),
                         MyText('${HighScores.highScores[0]}'),
                         const SizedBox(),
                       ],

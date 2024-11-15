@@ -56,24 +56,24 @@ class LeaderboardScreen extends StatelessWidget {
                     verticalDirection: VerticalDirection.down,
                     children: [
                       MyText(
-                        '${HighScores.highScores[0]}',
-                        fontSize: 30,
+                        '${HighScores.highScores[0]} - ${HighScores.playerNames[0]}',
+                        fontSize: 20,
                       ),
                       MyText(
-                        '${HighScores.highScores[1]}',
-                        fontSize: 30,
+                        '${HighScores.highScores[1]} - ${HighScores.playerNames[1]}',
+                        fontSize: 20,
                       ),
                       MyText(
-                        '${HighScores.highScores[2]}',
-                        fontSize: 30,
+                        '${HighScores.highScores[2]} - ${HighScores.playerNames[2]}',
+                        fontSize: 20,
                       ),
                       MyText(
-                        '${HighScores.highScores[3]}',
-                        fontSize: 30,
+                        '${HighScores.highScores[3]} - ${HighScores.playerNames[3]}',
+                        fontSize: 20,
                       ),
                       MyText(
-                        '${HighScores.highScores[4]}',
-                        fontSize: 30,
+                        '${HighScores.highScores[4]} - ${HighScores.playerNames[4]}',
+                        fontSize: 20,
                       ),
                     ],
                   ),

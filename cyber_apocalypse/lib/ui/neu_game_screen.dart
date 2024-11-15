@@ -17,6 +17,8 @@ class NeuGameScreen extends StatefulWidget {
 
 class _NeuGameScreenState extends State<NeuGameScreen> {
   late CharacterProvider characterProvider;
+  bool nameFilld = false;
+  String playerName = '';
 
   @override
   void initState() {
@@ -26,7 +28,8 @@ class _NeuGameScreenState extends State<NeuGameScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
+    return Scaffold(
+      body: Material(
       child: Center(
         child: AspectRatio(
           aspectRatio: 9 / 19.5,
@@ -52,8 +55,30 @@ class _NeuGameScreenState extends State<NeuGameScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
+                              TextField(
+                                decoration: InputDecoration(
+                                  hintText: 'Name',
+                                  hintStyle: TextStyle(color: Colors.white),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: Colors.white),
+                                  ),
+                                ),
+                                style: TextStyle(color: Colors.white),
+                                onChanged: (value) {
+                                  if (value.isNotEmpty) {
+                                    playerName = value;
+                                    nameFilld = true;
+                                  } else {
+                                    nameFilld = false;
+                                  }
+                                },
+                              ),
                               Container(
-                                  margin: EdgeInsets.only(left: 15, bottom: 30),
+                                  margin: EdgeInsets.only(
+                                      left: 15, bottom: 30, top: 40),
                                   child: Row(
                                     children: [
                                       IconButton(
@@ -88,8 +113,20 @@ class _NeuGameScreenState extends State<NeuGameScreen> {
                                   )),
                               MyButton(
                                 'Spielen',
-                                onPressed: () =>
-                                    context.pushAndRemoveUntil(Routes.game),
+                                onPressed: () => {
+                                  if (nameFilld)
+                                    {
+                                      context.read<CharacterProvider>().setPlayerName(playerName),
+                                      context.pushAndRemoveUntil(Routes.game)
+                                    }
+                                  else
+                                    {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(SnackBar(
+                                        content: Text('Bitte gib ein Name ein'),
+                                      ))
+                                    }
+                                },
                               ),
                             ],
                           ),
@@ -103,6 +140,7 @@ class _NeuGameScreenState extends State<NeuGameScreen> {
           ),
         ),
       ),
+    ),
     );
   }
 }

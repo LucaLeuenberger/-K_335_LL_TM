@@ -94,7 +94,7 @@ class CyberApocalypse extends Forge2DGame
 
       if (player.state == HeroState.dead) {
         state = GameState.gameOver;
-        HighScores.saveNewScore(score);
+        HighScores.saveNewScore(context ,score);
         overlays.add('GameOverMenu');
       }
     }

@@ -34,7 +34,7 @@ enum Routes {
       case Routes.leaderboard:
         return buildRoute(const LeaderboardScreen());
       case Routes.newgame:
-        return buildRoute(const NeuGameScreen());
+        return buildRoute(NeuGameScreen());
       default:
         throw Exception('Route does not exists');
     }

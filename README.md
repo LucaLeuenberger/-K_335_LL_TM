@@ -30,6 +30,8 @@ cd cyber_apocalypse
 
 2. Install dependencies by running in the terminal
 
+```sh
 flutter pub get
+```
 
 

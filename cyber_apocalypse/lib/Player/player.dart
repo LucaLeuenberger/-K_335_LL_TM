@@ -8,12 +8,14 @@ import 'package:cyber_apocalypse/Components/lightning.dart';
 import 'package:cyber_apocalypse/assets.dart';
 import 'package:cyber_apocalypse/components/power_up.dart';
 import 'package:cyber_apocalypse/cyber_apocalypse.dart';
+import 'package:cyber_apocalypse/provider/character_provider.dart';
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:cyber_apocalypse/Components/platform.dart';
+import 'package:provider/provider.dart';
 import '/utils.dart';
 import 'package:sensors_plus/sensors_plus.dart';
 
@@ -23,10 +25,19 @@ enum HeroState {
   dead,
 }
 
+
 const _durationJetpack = 3.0;
 
 class Player extends BodyComponent<CyberApocalypse>
     with ContactCallbacks, KeyboardHandler, HasGameRef<CyberApocalypse> {
+
+  final BuildContext context;
+
+  late final CharacterProvider characterProvider;
+
+  Player(this.context) {
+    characterProvider = Provider.of<CharacterProvider>(context, listen: false);
+  }
   static final size = Vector2(.75, .80);
 
   var state = HeroState.fall;
@@ -49,8 +60,9 @@ class Player extends BodyComponent<CyberApocalypse>
   bool hasBubbleShield = false;
 
   double durationJetpack = 0;
-
   StreamSubscription? accelerometerSubscription;
+
+  bool _isSonic = true;
 
   @override
   Future<void> onLoad() async {
@@ -63,14 +75,16 @@ class Player extends BodyComponent<CyberApocalypse>
       });
     }
 
+   _isSonic = characterProvider.getCharacter();
+
     fallComponent = SpriteComponent(
-      sprite: Assets.sonicFall,
+      sprite:_isSonic ? Assets.sonicFall : Assets.shadowFall,
       size: size,
       anchor: Anchor.center,
     );
 
     jumpComponent = SpriteComponent(
-      sprite: Assets.sonicJump,
+      sprite: _isSonic ? Assets.sonicJump : Assets.shadowJump,
       size: size,
       anchor: Anchor.center,
     );

@@ -11,4 +11,8 @@ class CharacterProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  bool getCharacter() {
+    return _isSonic;
+  }
+
 }

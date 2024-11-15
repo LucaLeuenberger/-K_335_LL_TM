@@ -1,3 +1,4 @@
+import 'package:cyber_apocalypse/Player/player.dart';
 import 'package:cyber_apocalypse/navigation/routes.dart';
 import 'package:cyber_apocalypse/provider/character_provider.dart';
 import 'package:cyber_apocalypse/ui/gameover_screen.dart';
@@ -42,7 +43,7 @@ class MyGameWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
         GameWidget(
-          game: CyberApocalypse(),
+          game: CyberApocalypse(context),
           overlayBuilderMap: {
             'GameOverMenu': (context, CyberApocalypse game) {
               return GameOverMenu(game: game);

@@ -15,8 +15,10 @@ import 'package:cyber_apocalypse/ui/game_ui.dart';
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/experimental.dart';
+import 'package:flame/game.dart';
 import 'package:flame/input.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
+import 'package:flutter/widgets.dart';
 
 
 final gameSize = Vector2(428, 926);
@@ -29,9 +31,11 @@ enum GameState {
   gameOver,
 }
 
+
 class CyberApocalypse extends Forge2DGame
     with HasKeyboardHandlerComponents, TapCallbacks {
   late final Player player;
+  final BuildContext context;
 
   int score = 0;
   int coins = 0;
@@ -41,7 +45,7 @@ class CyberApocalypse extends Forge2DGame
   var state = GameState.running;
 
   // Scale the screenSize by 100 and set the gravity of 15
-  CyberApocalypse()
+  CyberApocalypse(this.context)
       : super(
           zoom: 100,
           camera: CameraComponent.withFixedResolution(
@@ -57,7 +61,7 @@ class CyberApocalypse extends Forge2DGame
     camera.viewport.add(GameUI());
 
     world.add(Floor());
-    player = Player();
+    player = Player(context);
 
     world.add(player);
     final worldBounds = Rectangle.fromLTRB(

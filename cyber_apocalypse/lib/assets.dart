@@ -101,7 +101,7 @@ class Assets {
     bullet = atlas2.findSpriteByName('ChaosSpear')!;
     spring = atlas.findSpriteByName('Spring')!;
     bubbleSmall = atlas.findSpriteByName('Bubble_Small')!;
-    jetpackSmall = atlas.findSpriteByName('Jetpack_Small')!;
+    jetpackSmall = atlas2.findSpriteByName('ChaosEmeralds')!;
     bubble = atlas.findSpriteByName('Bubble_Big')!;
     jetpack = atlas.findSpriteByName('Jetpack_Big')!;
 

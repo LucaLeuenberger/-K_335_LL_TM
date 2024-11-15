@@ -80,3 +80,10 @@ ChaosSpear
   orig: 36, 24
   offset: 0, 0
   index: -1
+ChaosEmeralds
+  rotate: true
+  xy: 442, 631
+  size: 70, 64
+  orig: 70, 64
+  offset: 0, 0
+  index: -1

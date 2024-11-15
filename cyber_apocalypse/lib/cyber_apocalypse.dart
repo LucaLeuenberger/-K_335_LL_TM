@@ -141,14 +141,9 @@ class CyberApocalypse extends Forge2DGame
     if (random.nextBool()) {
       world.add(HearthEnemy(
         x: worldSize.x * random.nextDouble(),
-        y: generatedWorldHeight - 8,
+        y: generatedWorldHeight - 11,
       ));
-    } else if (random.nextDouble() < .35) {
-      world.add(CloudEnemy(
-        x: worldSize.x * random.nextDouble(),
-        y: generatedWorldHeight - 8,
-      ));
-    }
+    } 
       if (random.nextDouble() < .3) {
         world.add(PowerUp(
           x: worldSize.x * random.nextDouble(),

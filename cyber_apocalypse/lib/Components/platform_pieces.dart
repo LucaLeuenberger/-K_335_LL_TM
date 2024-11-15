@@ -25,7 +25,7 @@ class PlatformPieces extends BodyComponent<CyberApocalypse> {
     late Sprite sprite;
 
     switch (type) {
-      case PlatformType.beigeBroken:
+/*       case PlatformType.beigeBroken:
         if (isLeftSide) {
           sprite = Assets.platformBeigeLeft;
         } else {
@@ -38,7 +38,7 @@ class PlatformPieces extends BodyComponent<CyberApocalypse> {
         } else {
           sprite = Assets.platformBlueRight;
         }
-        break;
+        break; */
       case PlatformType.grayBroken:
         if (isLeftSide) {
           sprite = Assets.platformGrayLeft;
@@ -53,7 +53,7 @@ class PlatformPieces extends BodyComponent<CyberApocalypse> {
           sprite = Assets.platformGreenRight;
         }
         break;
-      case PlatformType.multicolorBroken:
+/*       case PlatformType.multicolorBroken:
         if (isLeftSide) {
           sprite = Assets.platformMulticolorLeft;
         } else {
@@ -66,7 +66,7 @@ class PlatformPieces extends BodyComponent<CyberApocalypse> {
         } else {
           sprite = Assets.platformPinkRight;
         }
-        break;
+        break; */
       default:
         throw ('Wrong platform type exception');
     }

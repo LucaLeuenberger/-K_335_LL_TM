@@ -257,7 +257,14 @@ class Player extends BodyComponent<CyberApocalypse>
     }
 
     if (other is Platform) {
-      jump();
+      if (other.type.name == 'pink') {
+        final velocity = body.linearVelocity;
+        body.linearVelocity = Vector2(velocity.x, -14);
+      } else if (other.type.name == 'gray') {
+        hit();
+      }else {
+        jump();
+      }
     }
   }
 

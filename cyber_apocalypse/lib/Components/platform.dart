@@ -4,30 +4,30 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 import 'package:cyber_apocalypse/cyber_apocalypse.dart';
 
 enum PlatformType {
-  blue,
+/*   blue,
   blueLight,
   blueBroken,
   beige,
   beigeLight,
-  beigeBroken,
+  beigeBroken, */
   gray,
-  grayLight,
+/*   grayLight, */
   grayBroken,
   green,
-  greenLight,
-  greenBroken,
-  multicolor,
+/*   greenLight,*/
+  greenBroken, 
+/*   multicolor,
   multicolorLight,
-  multicolorBroken,
+  multicolorBroken, */
   pink,
-  pinkLight,
-  pinkBroken,
+/*   pinkLight,
+  pinkBroken, */
 }
 
 extension PlatformTypeExtension on PlatformType {
   Sprite get sprite {
     switch (this) {
-      case PlatformType.beige:
+/*       case PlatformType.beige:
         return Assets.platformBeige;
       case PlatformType.blue:
         return Assets.platformBlue;
@@ -38,42 +38,42 @@ extension PlatformTypeExtension on PlatformType {
       case PlatformType.beigeBroken:
         return Assets.platformBeigeBroken;
       case PlatformType.blueBroken:
-        return Assets.platformBlueBroken;
+        return Assets.platformBlueBroken; */
       case PlatformType.gray:
         return Assets.platformGray;
-      case PlatformType.grayLight:
-        return Assets.platformGrayLight;
+/*       case PlatformType.grayLight:
+        return Assets.platformGrayLight; */
       case PlatformType.grayBroken:
-        return Assets.platformGrayBroken;
+        return Assets.platformGrayBroken; 
       case PlatformType.green:
         return Assets.platformGreen;
-      case PlatformType.greenLight:
-        return Assets.platformGreenLight;
+/*       case PlatformType.greenLight:
+        return Assets.platformGreenLight; */
       case PlatformType.greenBroken:
-        return Assets.platformGreenBroken;
-      case PlatformType.multicolor:
+        return Assets.platformGreenBroken; 
+/*       case PlatformType.multicolor:
         return Assets.platformMulticolor;
       case PlatformType.multicolorLight:
         return Assets.platformMulticolorLight;
       case PlatformType.multicolorBroken:
-        return Assets.platformMulticolorBroken;
+        return Assets.platformMulticolorBroken; */
       case PlatformType.pink:
         return Assets.platformPink;
-      case PlatformType.pinkLight:
+/*       case PlatformType.pinkLight:
         return Assets.platformPinkLight;
       case PlatformType.pinkBroken:
-        return Assets.platformPinkBroken;
+        return Assets.platformPinkBroken; */
     }
   }
 
   bool get isBroken {
     switch (this) {
-      case PlatformType.blueBroken:
-      case PlatformType.beigeBroken:
+/*       case PlatformType.blueBroken:
+      case PlatformType.beigeBroken: */
       case PlatformType.grayBroken:
       case PlatformType.greenBroken:
-      case PlatformType.multicolorBroken:
-      case PlatformType.pinkBroken:
+/*       case PlatformType.multicolorBroken:
+      case PlatformType.pinkBroken: */
         return true;
       default:
         return false;

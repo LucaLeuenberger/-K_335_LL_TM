@@ -108,29 +108,47 @@ class CyberApocalypse extends Forge2DGame
   }
 
   void generateNextSectionOfWorld() {
-    for (int i = 0; i < 10; i++) {
-      world.add(Platform(
-        x: worldSize.x * random.nextDouble(),
-        y: generatedWorldHeight,
-      ));
-      if (random.nextDouble() < .5) {
-        world.add(Platform(
-          x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 3 + (random.nextDouble() * 6),
-        ));
-      }
+     const double platformHeight = 1.0; // Adjust based on your platform height
+  for (int i = 0; i < 10; i++) {
+    Vector2 newPosition;
+    do {
+      newPosition = Vector2(
+        worldSize.x * random.nextDouble(),
+        generatedWorldHeight,
+      );
+    } while (isOverlapping(newPosition, platformHeight));
 
-      if (random.nextBool()) {
-        world.add(HearthEnemy(
-          x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 8,
-        ));
-      } else if (random.nextDouble() < .35) {
-        world.add(CloudEnemy(
-          x: worldSize.x * random.nextDouble(),
-          y: generatedWorldHeight - 5,
-        ));
-      }
+    world.add(Platform(
+      x: newPosition.x,
+      y: newPosition.y,
+    ));
+
+    if (random.nextDouble() < .2) {
+      Vector2 newPosition2;
+      do {
+        newPosition2 = Vector2(
+          worldSize.x * random.nextDouble(),
+          generatedWorldHeight - 3 + (random.nextDouble() * 6),
+        );
+      } while (isOverlapping(newPosition2, platformHeight));
+
+      world.add(Platform(
+        x: newPosition2.x,
+        y: newPosition2.y,
+      ));
+    }
+
+    if (random.nextBool()) {
+      world.add(HearthEnemy(
+        x: worldSize.x * random.nextDouble(),
+        y: generatedWorldHeight - 8,
+      ));
+    } else if (random.nextDouble() < .35) {
+      world.add(CloudEnemy(
+        x: worldSize.x * random.nextDouble(),
+        y: generatedWorldHeight - 8,
+      ));
+    }
       if (random.nextDouble() < .3) {
         world.add(PowerUp(
           x: worldSize.x * random.nextDouble(),
@@ -144,6 +162,21 @@ class CyberApocalypse extends Forge2DGame
       generatedWorldHeight -= 2.7;
     }
   }
+
+  bool isOverlapping(Vector2 newPosition, double newPlatformHeight) {
+  for (final component in world.children) {
+    if (component is Platform) {
+      final existingPosition = component.position;
+      final existingHeight = Platform.size.y;
+
+      if ((newPosition.y - newPlatformHeight / 2 < existingPosition.y + existingHeight / 2) &&
+          (newPosition.y + newPlatformHeight / 2 > existingPosition.y - existingHeight / 2)) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
 
   void addBrokenPlatformPieces(var platform) {
     final x = platform.body.position.x;

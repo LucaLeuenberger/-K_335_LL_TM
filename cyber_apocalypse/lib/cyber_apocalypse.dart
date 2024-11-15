@@ -238,4 +238,16 @@ class CyberApocalypse extends Forge2DGame
     super.onRemove();
     player.cancelSensor();
   }
+
+    @override
+  void pauseEngine() {
+    super.pauseEngine();
+    player.saveGameState();
+  }
+
+  @override
+  void onDetach() {
+    super.onDetach();
+    player.saveGameState();
+  }
 }

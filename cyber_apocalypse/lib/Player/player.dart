@@ -8,6 +8,8 @@ import 'package:cyber_apocalypse/Components/lightning.dart';
 import 'package:cyber_apocalypse/assets.dart';
 import 'package:cyber_apocalypse/components/power_up.dart';
 import 'package:cyber_apocalypse/cyber_apocalypse.dart';
+import 'package:cyber_apocalypse/gameState/game_state.dart';
+import 'package:cyber_apocalypse/gameState/game_state_manager.dart';
 import 'package:cyber_apocalypse/provider/character_provider.dart';
 import 'package:flame/components.dart';
 import 'package:flame_forge2d/flame_forge2d.dart';
@@ -91,6 +93,11 @@ class Player extends BodyComponent<CyberApocalypse>
 
     currentComponent = fallComponent;
     add(currentComponent);
+
+    final gameState = await GameStateManager.loadGameState();
+    if (gameState != null) {
+      loadGameState(gameState);
+    }
   }
 
   void jump() {
@@ -311,5 +318,24 @@ class Player extends BodyComponent<CyberApocalypse>
 
   void cancelSensor() {
     accelerometerSubscription?.cancel();
+  }
+
+    void saveGameState() {
+    final gameState = SaveGameState(
+      playerPosition: body.position,
+      score: game.coins,
+      hasJetpack: hasJetpack,
+      hasBubbleShield: hasBubbleShield,
+    );
+    GameStateManager.saveGameState(gameState);
+  }
+
+  void loadGameState(SaveGameState gameState) {
+    body.setTransform(gameState.playerPosition, 0);
+    game.coins = gameState.score;
+    hasJetpack = gameState.hasJetpack;
+    hasBubbleShield = gameState.hasBubbleShield;
+    if (hasJetpack) add(jetpackComponent);
+    if (hasBubbleShield) add(bubbleShieldComponent);
   }
 }

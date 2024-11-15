@@ -28,7 +28,7 @@ enum Routes {
 
     switch (routeName) {
       case Routes.main:
-        return buildRoute(const MainMenuScreen());
+        return buildRoute(MainMenuScreen());
       case Routes.game:
         return buildRoute(const MyGameWidget());
       case Routes.leaderboard:

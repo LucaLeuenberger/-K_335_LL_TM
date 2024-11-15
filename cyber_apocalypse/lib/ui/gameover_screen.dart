@@ -1,3 +1,4 @@
+import 'package:cyber_apocalypse/gameState/game_state_manager.dart';
 import 'package:cyber_apocalypse/navigation/routes.dart';
 import 'package:cyber_apocalypse/ui/widgets/my_button.dart';
 import 'package:cyber_apocalypse/ui/widgets/my_text.dart';
@@ -61,7 +62,10 @@ class GameOverMenu extends StatelessWidget {
                 const SizedBox(height: 40),
                 MyButton(
                   'Try Again',
-                  onPressed: () => context.pushAndRemoveUntil(Routes.game),
+                  onPressed: () => {
+                    context.pushAndRemoveUntil(Routes.game),
+                    GameStateManager.clearGameState(),
+                  },
                 ),
                 const SizedBox(height: 40),
                 MyButton(

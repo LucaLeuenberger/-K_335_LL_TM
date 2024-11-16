@@ -6,14 +6,11 @@ import 'package:cyber_apocalypse/cyber_apocalypse.dart';
 enum PlatformType {
    blue,
   blueLight,
-  blueBroken,
   beige,
   beigeLight,
-  beigeBroken, 
   gray,
   green,
   greenLight,
-  greenBroken,
   pink,
 }
 
@@ -28,18 +25,12 @@ extension PlatformTypeExtension on PlatformType {
         return Assets.platformBlueLight;
       case PlatformType.beigeLight:
         return Assets.platformBeigeLight;
-      case PlatformType.beigeBroken:
-        return Assets.platformBeigeBroken;
-      case PlatformType.blueBroken:
-        return Assets.platformBlueBroken; 
       case PlatformType.gray:
         return Assets.platformGray; 
       case PlatformType.green:
         return Assets.platformGreen;
       case PlatformType.greenLight:
         return Assets.platformGreenLight;
-      case PlatformType.greenBroken:
-        return Assets.platformGreenBroken;
       case PlatformType.pink:
         return Assets.platformPink;
     }
@@ -47,9 +38,9 @@ extension PlatformTypeExtension on PlatformType {
 
   bool get isBroken {
     switch (this) {
-      case PlatformType.blueBroken:
-      case PlatformType.beigeBroken: 
-      case PlatformType.greenBroken:
+      case PlatformType.beigeLight:
+      case PlatformType.blueLight: 
+      case PlatformType.greenLight:
         return true;
       default:
         return false;

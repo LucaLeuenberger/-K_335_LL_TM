@@ -143,4 +143,18 @@ GreenplatformBroken
   orig: 192, 45
   offset: 0, 0
   index: -1           
+SupperSonic
+  rotate: false
+  xy: 272, 611
+  size: 70, 102
+  orig: 70, 102
+  offset: 0, 0
+  index: -1
+SupperShadow
+  rotate: false
+  xy: 76, 616
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: -1           
 

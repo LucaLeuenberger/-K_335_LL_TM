@@ -38,6 +38,7 @@ class Player extends BodyComponent<CyberApocalypse>
   late final CharacterProvider characterProvider;
 
   Player(this.context) {
+    jetpackComponent = JetpackGroup(context);
     characterProvider = Provider.of<CharacterProvider>(context, listen: false);
   }
   static final size = Vector2(.75, .80);
@@ -46,7 +47,7 @@ class Player extends BodyComponent<CyberApocalypse>
 
   late final SpriteComponent fallComponent;
   late final SpriteComponent jumpComponent;
-  final jetpackComponent = JetpackGroup();
+  late final JetpackGroup jetpackComponent;
   final bubbleShieldComponent = SpriteComponent(
     sprite: Assets.bubble,
     size: Vector2(1, 1),
@@ -125,8 +126,12 @@ class Player extends BodyComponent<CyberApocalypse>
   void takeJetpack() {
     if (state == HeroState.dead) return;
     durationJetpack = 0;
-    if (!hasJetpack) add(jetpackComponent);
-    hasJetpack = true;
+    if (!hasJetpack)
+    { 
+      jumpComponent.opacity = 0;
+      add(jetpackComponent);
+      hasJetpack = true;
+    }
   }
 
   void takeBubbleShield() {
@@ -168,6 +173,7 @@ class Player extends BodyComponent<CyberApocalypse>
       if (durationJetpack >= _durationJetpack) {
         hasJetpack = false;
         remove(jetpackComponent);
+        jumpComponent.opacity = 1;
       }
       velocity.y = -7.5;
     }

@@ -27,7 +27,9 @@ class Assets {
   static late final Sprite bubbleSmall;
   static late final Sprite jetpackSmall;
   static late final Sprite bubble;
-  static late final Sprite jetpack;
+
+  static late final Sprite supperSonic;
+  static late final Sprite supperShadow;
 
   static late final Sprite platformBeige;
   static late final Sprite platformBeigeLight;
@@ -83,7 +85,9 @@ class Assets {
     bubbleSmall = atlas.findSpriteByName('Bubble_Small')!;
     jetpackSmall = atlas2.findSpriteByName('ChaosEmeralds')!;
     bubble = atlas.findSpriteByName('Bubble_Big')!;
-    jetpack = atlas.findSpriteByName('Jetpack_Big')!;
+  
+    supperSonic = atlas2.findSpriteByName('SupperSonic')!;
+    supperShadow = atlas2.findSpriteByName('SupperShadow')!;
 
     final jetpack1 = atlas.findSpriteByName('JetFire1')!;
     final jetpack2 = atlas.findSpriteByName('JetFire2')!;

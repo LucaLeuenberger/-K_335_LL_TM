@@ -43,10 +43,10 @@ class _HighScoresScreenState extends State<HighScoresScreen> {
               ),
             ),
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 IconButton(
+                  alignment: Alignment.topLeft,
                   icon: SpriteWidget(
                     sprite: Assets.buttonBack,
                   ),
@@ -54,13 +54,14 @@ class _HighScoresScreenState extends State<HighScoresScreen> {
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const MyText(
                       'Best Scores',
                       fontSize: 42,
                     ),
                     Container(
-                      margin: const EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(left:35, top: 20),
                       height: MediaQuery.of(context).size.height * .6,
                       width: MediaQuery.of(context).size.width * .8,
                       color: Colors.blue.withOpacity(.7),

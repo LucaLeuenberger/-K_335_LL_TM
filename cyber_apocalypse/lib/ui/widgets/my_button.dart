@@ -20,10 +20,10 @@ class MyButton extends StatelessWidget {
       pressedSprite: Future.value(Assets.button),
       onPressed: onPressed,
       height: 50,
-      width: 170,
+      width: 190,
       label: MyText(
         text,
-        fontSize: 26,
+        fontSize: 23,
         color: Colors.black,
       ),
     );

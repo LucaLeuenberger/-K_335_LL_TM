@@ -79,7 +79,7 @@ class _NeuGameScreenState extends State<NeuGameScreen> {
                                 ),
                                 Container(
                                     margin: EdgeInsets.only(
-                                        left: 15, bottom: 30, top: 40),
+                                        left: 65, bottom: 30, top: 40),
                                     child: Row(
                                       children: [
                                         IconButton(

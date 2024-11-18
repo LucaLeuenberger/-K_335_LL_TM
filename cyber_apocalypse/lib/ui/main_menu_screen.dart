@@ -20,6 +20,7 @@ class MainMenuScreen extends StatelessWidget {
           child: AspectRatio(
             aspectRatio: 9 / 19.5,
             child: Container(
+              padding: const EdgeInsets.only(left: 30),
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/ui/background1.png'),
@@ -32,7 +33,7 @@ class MainMenuScreen extends StatelessWidget {
                   return Stack(
                     children: [
                       Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const SizedBox(height: 24),
                           Image.asset('assets/ui/title.png'),

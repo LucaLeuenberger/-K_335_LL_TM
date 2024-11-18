@@ -1,3 +1,5 @@
+import 'package:cyber_apocalypse/highscore/highscore.dart';
+import 'package:cyber_apocalypse/highscore/highscore_manager.dart';
 import 'package:cyber_apocalypse/provider/character_provider.dart';
 import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +29,8 @@ class HighScores {
         }
         highScores[i] = score;
         playerNames[i] = playerName;
+        final highScore = HighScore(playerName: playerName, score: score);
+        await HighScoreManager.saveHighScore(highScore);
         break;
       }
     }

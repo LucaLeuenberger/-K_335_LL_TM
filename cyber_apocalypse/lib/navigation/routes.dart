@@ -32,7 +32,7 @@ enum Routes {
       case Routes.game:
         return buildRoute(const MyGameWidget());
       case Routes.leaderboard:
-        return buildRoute(const LeaderboardScreen());
+        return buildRoute(HighScoresScreen());
       case Routes.newgame:
         return buildRoute(NeuGameScreen());
       default:

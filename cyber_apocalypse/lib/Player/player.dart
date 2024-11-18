@@ -275,6 +275,7 @@ class Player extends BodyComponent<CyberApocalypse>
         body.linearVelocity = Vector2(velocity.x, -14);
       } else if (other.type.name == 'gray' && state == HeroState.fall) {
         hit();
+        jump();
       }else {
         jump();
       }

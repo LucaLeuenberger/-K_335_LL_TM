@@ -79,9 +79,12 @@ class CyberApocalypse extends Forge2DGame
     super.update(dt);
 
     if (state == GameState.running) {
-      if (generatedWorldHeight > player.body.position.y - worldSize.y / 2) {
+      if (generatedWorldHeight > player.body.position.y - worldSize.y / 1.15) {
         generateNextSectionOfWorld();
+        checkForGrayPlatform();
       }
+
+      
       final heroY = (player.body.position.y - worldSize.y) * -1;
 
       if (score < heroY) {
@@ -108,7 +111,7 @@ class CyberApocalypse extends Forge2DGame
   }
 
   void generateNextSectionOfWorld() {
-     const double platformHeight = 1.0; // Adjust based on your platform height
+    const double platformHeight = 1.0; // Adjust based on your platform height
   for (int i = 0; i < 10; i++) {
     Vector2 newPosition;
     do {
@@ -154,8 +157,9 @@ class CyberApocalypse extends Forge2DGame
         }
       }
 
-      generatedWorldHeight -= 2.7;
+      generatedWorldHeight -= 2.4;
     }
+
   }
 
   bool isOverlapping(Vector2 newPosition, double newPlatformHeight) {
@@ -167,11 +171,25 @@ class CyberApocalypse extends Forge2DGame
       if ((newPosition.y - newPlatformHeight / 2 < existingPosition.y + existingHeight / 2) &&
           (newPosition.y + newPlatformHeight / 2 > existingPosition.y - existingHeight / 2)) {
         return true;
-      }
+      }      
     }
   }
   return false;
 }
+
+  void checkForGrayPlatform() {
+    for (final component in world.children) {
+      if (component is Platform) {
+        if (component.type == PlatformType.gray) {
+          world.add(Platform(x: 
+           worldSize.x * random.nextDouble(),
+            y: component.position.y,
+          ),
+          );
+        }
+      }
+    }
+  }
 
   void addBrokenPlatformPieces(var platform) {
     final x = platform.body.position.x;

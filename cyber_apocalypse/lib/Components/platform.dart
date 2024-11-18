@@ -52,6 +52,7 @@ class Platform extends BodyComponent<CyberApocalypse> {
   static Vector2 size = Vector2(1.2, .5);
   final Vector2 _position;
   bool destroy = false;
+  
 
   final PlatformType type;
 
@@ -86,6 +87,7 @@ class Platform extends BodyComponent<CyberApocalypse> {
       world.destroyBody(body);
      if (type.isBroken) game.addBrokenPlatformPieces(this);
     }
+
   }
 
   @override

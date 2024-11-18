@@ -19,7 +19,7 @@ class JetpackGroup extends PositionComponent {
   JetpackGroup(this.context) {
     characterProvider = Provider.of<CharacterProvider>(context, listen: false);
      fireComponent = SpriteAnimationComponent(
-      animation: Assets.jetpackFire.clone(),
+      animation: Assets.fireBubble.clone(),
       size: fireSize,
       anchor: Anchor.center,
     );

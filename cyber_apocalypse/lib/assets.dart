@@ -15,7 +15,7 @@ class Assets {
   static late final Sprite shadowJump;
 
   static late final SpriteAnimation eggbot;
-  static late final SpriteAnimation jetpackFire;
+  static late final SpriteAnimation fireBubble;
 
   static late final Sprite coin;
   static late final Sprite gun;
@@ -77,12 +77,14 @@ class Assets {
     supperSonic = atlas2.findSpriteByName('SupperSonic')!;
     supperShadow = atlas2.findSpriteByName('SupperShadow')!;
 
-    final jetpack1 = atlas.findSpriteByName('JetFire1')!;
-    final jetpack2 = atlas.findSpriteByName('JetFire2')!;
+    final fireBubble1 = atlas2.findSpriteByName('FireBubble1')!;
+    final fireBubble2 = atlas2.findSpriteByName('FireBubble2')!;
+    final fireBubble3 = atlas2.findSpriteByName('FireBubble3')!;
 
-    jetpackFire = SpriteAnimation.spriteList([
-      jetpack1,
-      jetpack2,
+    fireBubble = SpriteAnimation.spriteList([
+      fireBubble1,
+      fireBubble2,
+      fireBubble3,
     ], stepTime: 0.15, loop: true);
 
     StreetPlatform = atlas2.findSpriteByName('StreetplatformNormal')!;

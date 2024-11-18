@@ -156,5 +156,26 @@ SupperShadow
   size: 64, 88
   orig: 64, 88
   offset: 0, 0
+  index: -1   
+FireBubble1
+  rotate: false
+  xy: 408, 501
+  size: 78, 107
+  orig: 78, 107
+  offset: 0, 0
   index: -1           
+FireBubble2
+  rotate: false
+  xy: 517, 498
+  size: 78, 107
+  orig: 78, 107
+  offset: 0, 0
+  index: -1
+FireBubble3
+  rotate: false
+  xy: 621, 492
+  size: 85, 112
+  orig: 85, 112
+  offset: 0, 0
+  index: -1          
 

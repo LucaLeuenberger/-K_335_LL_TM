@@ -26,13 +26,13 @@ class PlatformPieces extends BodyComponent<CyberApocalypse> {
 
     switch (type) {
        case PlatformType.beigeLight:
-          sprite = Assets.platformBeigeBroken;
+          sprite = Assets.SandPlatformBroken;
         break;
       case PlatformType.blueLight:
-        sprite = Assets.platformBlueBroken;
+        sprite = Assets.StreetPlatformBroken;
         break;
       case PlatformType.greenLight:
-        sprite = Assets.platformGreenBroken;
+        sprite = Assets.GrassPlatformBroken;
         break;
       default:
         throw ('Wrong platform type exception');

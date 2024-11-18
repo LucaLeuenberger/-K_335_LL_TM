@@ -20,7 +20,6 @@ class Lightning extends BodyComponent<CyberApocalypse> {
 
     add(
       SpriteAnimationComponent(
-        animation: Assets.lightning.clone(),
         anchor: Anchor.center,
         size: size,
       ),

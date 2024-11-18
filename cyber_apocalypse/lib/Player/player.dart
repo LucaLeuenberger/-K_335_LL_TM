@@ -49,7 +49,7 @@ class Player extends BodyComponent<CyberApocalypse>
   late final SpriteComponent jumpComponent;
   late final JetpackGroup jetpackComponent;
   final bubbleShieldComponent = SpriteComponent(
-    sprite: Assets.bubble,
+    sprite: Assets.shield,
     size: Vector2(1, 1),
     anchor: Anchor.center,
     priority: 2,

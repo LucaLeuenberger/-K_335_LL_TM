@@ -22,7 +22,7 @@ class HearthEnemy extends BodyComponent<CyberApocalypse> {
 
     add(
       SpriteAnimationComponent(
-        animation: Assets.hearthEnemy.clone(),
+        animation: Assets.eggbot.clone(),
         anchor: Anchor.center,
         size: size,
       ),

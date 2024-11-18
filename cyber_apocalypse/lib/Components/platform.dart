@@ -18,21 +18,21 @@ extension PlatformTypeExtension on PlatformType {
   Sprite get sprite {
     switch (this) {
       case PlatformType.beige:
-        return Assets.platformBeige;
+        return Assets.SandPlatform;
       case PlatformType.blue:
-        return Assets.platformBlue;
+        return Assets.StreetPlatform;
       case PlatformType.blueLight:
-        return Assets.platformBlueLight;
+        return Assets.StreetPlatformBreaking;
       case PlatformType.beigeLight:
-        return Assets.platformBeigeLight;
+        return Assets.SandPlatformBreaking;
       case PlatformType.gray:
-        return Assets.platformGray; 
+        return Assets.SpikePlatform; 
       case PlatformType.green:
-        return Assets.platformGreen;
+        return Assets.GrassPlatform;
       case PlatformType.greenLight:
-        return Assets.platformGreenLight;
+        return Assets.GrassPlatformBreaking;
       case PlatformType.pink:
-        return Assets.platformPink;
+        return Assets.SpringPlatform;
     }
   }
 

@@ -23,7 +23,7 @@ class Bullet extends BodyComponent<CyberApocalypse> with ContactCallbacks {
 
     add(
       SpriteComponent(
-        sprite: Assets.bullet,
+        sprite: Assets.chaosspear,
         size: size,
         anchor: Anchor.center,
       ),

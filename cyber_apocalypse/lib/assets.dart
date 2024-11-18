@@ -14,38 +14,35 @@ class Assets {
   static late final Sprite shadowFall;
   static late final Sprite shadowJump;
 
-  static late final Sprite cloudHappyEnemy;
-  static late final Sprite cloudAngryEnemy;
-  static late final SpriteAnimation hearthEnemy;
+  static late final SpriteAnimation eggbot;
   static late final SpriteAnimation jetpackFire;
-  static late final SpriteAnimation lightning;
 
   static late final Sprite coin;
   static late final Sprite gun;
-  static late final Sprite bullet;
+  static late final Sprite chaosspear;
   static late final Sprite spring;
   static late final Sprite bubbleSmall;
-  static late final Sprite jetpackSmall;
-  static late final Sprite bubble;
+  static late final Sprite chaosemeralds;
+  static late final Sprite shield;
 
   static late final Sprite supperSonic;
   static late final Sprite supperShadow;
 
-  static late final Sprite platformBeige;
-  static late final Sprite platformBeigeLight;
-  static late final Sprite platformBeigeBroken;
+  static late final Sprite StreetPlatform;
+  static late final Sprite StreetPlatformBreaking;
+  static late final Sprite StreetPlatformBroken;
   
-  static late final Sprite platformBlue;
-  static late final Sprite platformBlueLight;
-  static late final Sprite platformBlueBroken;
+  static late final Sprite SandPlatform;
+  static late final Sprite SandPlatformBreaking;
+  static late final Sprite SandPlatformBroken;
 
-  static late final Sprite platformGray;
+  static late final Sprite SpikePlatform;
 
-  static late final Sprite platformGreen;
-  static late final Sprite platformGreenLight;
-  static late final Sprite platformGreenBroken;
+  static late final Sprite GrassPlatform;
+  static late final Sprite GrassPlatformBreaking;
+  static late final Sprite GrassPlatformBroken;
 
-  static late final Sprite platformPink;
+  static late final Sprite SpringPlatform;
 
   static Future<void> load() async {
     final atlas = await TexturePackerAtlas.load('atlasMap.atlas');
@@ -61,30 +58,21 @@ class Assets {
     shadowFall = atlas2.findSpriteByName('ShadowFall')!;
     shadowJump = atlas2.findSpriteByName('ShadowJump')!;
 
-    cloudHappyEnemy = atlas.findSpriteByName('HappyCloud')!;
-    cloudAngryEnemy = atlas.findSpriteByName('AngryCloud')!;
     final enemy1 = atlas2.findSpriteByName('EggbotRight')!;
     final enemy2 = atlas2.findSpriteByName('EggbotLeft')!;
-    final lightning1 = atlas.findSpriteByName('Lightning1')!;
-    final lightning2 = atlas.findSpriteByName('Lightning2')!;
 
-    hearthEnemy = SpriteAnimation.spriteList([
+    eggbot = SpriteAnimation.spriteList([
       enemy1,
       enemy2,
     ], stepTime: 1, loop: true);
 
-    lightning = SpriteAnimation.spriteList([
-      lightning1,
-      lightning2,
-    ], stepTime: 0.15, loop: true);
-
     coin = atlas2.findSpriteByName('Rings')!;
     gun = atlas.findSpriteByName('Pistol')!;
-    bullet = atlas2.findSpriteByName('ChaosSpear')!;
+    chaosspear = atlas2.findSpriteByName('ChaosSpear')!;
     spring = atlas.findSpriteByName('Spring')!;
     bubbleSmall = atlas.findSpriteByName('Bubble_Small')!;
-    jetpackSmall = atlas2.findSpriteByName('ChaosEmeralds')!;
-    bubble = atlas.findSpriteByName('Bubble_Big')!;
+    chaosemeralds = atlas2.findSpriteByName('ChaosEmeralds')!;
+    shield = atlas.findSpriteByName('Bubble_Big')!;
   
     supperSonic = atlas2.findSpriteByName('SupperSonic')!;
     supperShadow = atlas2.findSpriteByName('SupperShadow')!;
@@ -97,21 +85,21 @@ class Assets {
       jetpack2,
     ], stepTime: 0.15, loop: true);
 
-    platformBeige = atlas2.findSpriteByName('StreetplatformNormal')!;
-    platformBeigeLight = atlas2.findSpriteByName('StreetplatformBreaking')!;
-    platformBeigeBroken = atlas2.findSpriteByName('StreetplatformBroken')!;
+    StreetPlatform = atlas2.findSpriteByName('StreetplatformNormal')!;
+    StreetPlatformBreaking = atlas2.findSpriteByName('StreetplatformBreaking')!;
+    StreetPlatformBroken = atlas2.findSpriteByName('StreetplatformBroken')!;
 
-    platformBlue = atlas2.findSpriteByName('SandPlatformNormal')!;
-    platformBlueLight = atlas2.findSpriteByName('SandPlatformBreaking')!;
-    platformBlueBroken = atlas2.findSpriteByName('SandPlatformBroken')!;
+    SandPlatform = atlas2.findSpriteByName('SandPlatformNormal')!;
+    SandPlatformBreaking = atlas2.findSpriteByName('SandPlatformBreaking')!;
+    SandPlatformBroken = atlas2.findSpriteByName('SandPlatformBroken')!;
 
-    platformGray = atlas2.findSpriteByName('PlatformTrapGreen')!;
+    SpikePlatform = atlas2.findSpriteByName('PlatformTrapGreen')!;
 
-    platformGreen = atlas2.findSpriteByName('PlatformNormalGreen')!;
-    platformGreenLight = atlas2.findSpriteByName('GreenplatformBreaking')!; 
-    platformGreenBroken = atlas2.findSpriteByName('GreenplatformBroken')!;
+    GrassPlatform = atlas2.findSpriteByName('PlatformNormalGreen')!;
+    GrassPlatformBreaking = atlas2.findSpriteByName('GreenplatformBreaking')!; 
+    GrassPlatformBroken = atlas2.findSpriteByName('GreenplatformBroken')!;
 
 
-    platformPink = atlas2.findSpriteByName('PlatformSpringGreen')!;
+    SpringPlatform = atlas2.findSpriteByName('PlatformSpringGreen')!;
   }
 }

@@ -1,10 +1,6 @@
-import 'package:cyber_apocalypse/Player/player.dart';
 import 'package:cyber_apocalypse/navigation/routes.dart';
 import 'package:cyber_apocalypse/provider/character_provider.dart';
 import 'package:cyber_apocalypse/ui/gameover_screen.dart';
-import 'package:cyber_apocalypse/ui/leaderboard_screen.dart';
-import 'package:cyber_apocalypse/ui/main_menu_screen.dart';
-import 'package:cyber_apocalypse/ui/neu_game_screen.dart';
 import 'package:cyber_apocalypse/ui/pause_menu.dart';
 import 'package:cyber_apocalypse/assets.dart';
 import 'package:cyber_apocalypse/cyber_apocalypse.dart';

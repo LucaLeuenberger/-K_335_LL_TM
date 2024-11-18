@@ -7,7 +7,7 @@ import 'package:flame_forge2d/flame_forge2d.dart';
 
 const _timeForNextLightning = 5.0;
 
-class CloudEnemy extends BodyComponent<CyberApocalypse> {
+class eggbot extends BodyComponent<CyberApocalypse> {
   static Vector2 size = Vector2(1.55, .83);
   final speed = 1.0 + (1.0 * random.nextDouble());
 
@@ -16,7 +16,7 @@ class CloudEnemy extends BodyComponent<CyberApocalypse> {
   Vector2 _position;
   bool destroy = false;
 
-  CloudEnemy({
+  eggbot({
     required double x,
     required double y,
   }) : _position = Vector2(x, y);
@@ -28,7 +28,6 @@ class CloudEnemy extends BodyComponent<CyberApocalypse> {
 
     add(
       SpriteComponent(
-        sprite: Assets.cloudHappyEnemy,
         anchor: Anchor.center,
         size: size,
       ),

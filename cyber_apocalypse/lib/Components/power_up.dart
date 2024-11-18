@@ -13,7 +13,7 @@ extension PowerUpExtension on PowerUpType {
   Sprite get sprite {
     switch (this) {
       case PowerUpType.jetpack:
-        return Assets.jetpackSmall;
+        return Assets.chaosemeralds;
       case PowerUpType.bubble:
         return Assets.bubbleSmall;
       case PowerUpType.gun:

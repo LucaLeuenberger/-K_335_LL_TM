@@ -5,12 +5,14 @@ class SaveGameState {
   final int score;
   final bool hasJetpack;
   final bool hasBubbleShield;
+  final String playerName;
 
   SaveGameState({
     required this.playerPosition,
     required this.score,
     required this.hasJetpack,
     required this.hasBubbleShield,
+    required this.playerName,
   });
 
   Map<String, dynamic> toJson() {
@@ -19,6 +21,7 @@ class SaveGameState {
       'score': score,
       'hasJetpack': hasJetpack,
       'hasBubbleShield': hasBubbleShield,
+      'playerName': playerName,
     };
   }
 
@@ -28,6 +31,7 @@ class SaveGameState {
       score: json['score'],
       hasJetpack: json['hasJetpack'],
       hasBubbleShield: json['hasBubbleShield'],
+      playerName: json['playerName'],
     );
   }
 }

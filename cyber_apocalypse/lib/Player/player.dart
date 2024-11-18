@@ -332,6 +332,7 @@ class Player extends BodyComponent<CyberApocalypse>
       score: game.coins,
       hasJetpack: hasJetpack,
       hasBubbleShield: hasBubbleShield,
+      playerName: characterProvider.playerName,
     );
     GameStateManager.saveGameState(gameState);
   }
